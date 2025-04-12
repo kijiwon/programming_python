@@ -12,6 +12,12 @@
 
 2. 제어문
     •if문: 조건에 따라 실행할 코드 정의
+        if x > 5:
+            print("x는 5보다 큼")
+        elif x == 5: ;elif -> else if와 동일한 의미
+            print("x는 5")
+        else:
+            print("x는 5보다 작음")
     •삼항 연산자
         x = 10
         result = "크다" if x > 5 else "작다" → 크다
