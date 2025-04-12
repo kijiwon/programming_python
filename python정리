@@ -26,3 +26,15 @@
                 print("x는 1이나 2가 아님")
         [실행 결과] x는 2
 
+3. 반복문
+    •for문: 시퀀스나 범위를 순회
+        for i in range(5): → 5전까지 범위
+            print(i)
+    •while문: 조건이 참인 동안 반복
+        while x < 5:
+            print(x)
+            x += 1
+
+4. 반복 제어문
+    •break: 반복문 즉시 종료
+    •continue: 현재 반복을 건너뛰고 다음 반복 실행
