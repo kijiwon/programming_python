@@ -198,3 +198,21 @@
                     print(x) → 지역변수 x를 출력
                 func() → 5출력
                 print(x) → 10출력
+
+8. 리스트 컴프리헨션 - 한 줄의 코드로 새로운 리스트 생성
+    기존의 리스트나 다른 반복 가능한(Iterable) 객체로부터 조건을 적용하거나 변환해 새로운 리스트를 생성하는 문법
+    ○ 기본 문법
+        [expression for item in iterable if condition]
+        •expression: 리스트의 각 요소를 생성하는 표현식
+        •item: 반복 가능한 객체에서 가져오는 각 요소
+        •iterable: 반복 가능한 객체(리스트, 튜플, 문자열 등)
+        •condition: 선택적으로 요소를 필터링하는 조건식(참인 경우만 포함)
+    ○ 사용법
+        •기본 사용법
+            numbers = [1, 2, 3, 4, 5]
+            squared = [n**2 for n in numbers] → numbers의 각 요소를 하나씩 꺼내 제곱
+            print(squared) → [1, 4, 9, 16, 25]
+        •조건문 사용
+            numbers = [1, 2, 3, 4, 5]
+            squared = [n for n in numbers if n % 2 == 0] → numbers의 각 요소 중 2로 나눈 나머지가 0인 요소만 꺼내기
+            print(squared) → [2, 4]
