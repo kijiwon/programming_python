@@ -128,3 +128,73 @@
         •주요 메소드
             a.count(b): b의 개수 반환
             a.index(b): b의 첫 번째 인덱스 반환
+
+7. 클래스와 함수
+    ○ 클래스: 객체를 생성하기 위한 틀(템플릿). 데이터(속성)와 행동(메소드)를 하나로 묶음
+        •주요 구성 요소
+            ➀ 속성(Attributes): 객체의 데이터 저장. __init__ 메소드에서 self를 사용해 정의
+            ➁ 메소드(Methods): 객체가 수행할 동작 정의. 첫 번째 매개변수로 self를 받음
+            ➂ 생성자(Constructor): __init__ 메소드로 정의. 객체가 생성될 때 초기화함
+            ➃ 소멸자(Destructor): __del__ 메소드로 정의. 객체가 소멸될 때 호출
+        •정의
+            class Person:
+                def __init__(self, name, age): → 생성자
+                    self.name = name → 속성 정의
+                    self.age = age → 속성 정의
+                
+                def greet(self): → greet 메소드 정의
+                    return f"{self.name}, {self.age}"
+        # 객체 생성
+            person1 = Person("Lee", 25)
+            print(person1.greet()) → Lee, 25
+    
+    ○ 함수: 특정 작업을 수행하는 코드 블록. 재사용 가능한 형태
+        •정의와 호출: def를 사용해 정의
+            def add(a, b): → add함수 정의
+                return a + b
+            
+            result = add(3, 5) → add함수 호출
+            print(result) → 8
+        •함수의 종류
+            ➀ 매개변수와 반환값이 있는 함수
+                def multiply(x, y):
+                    return x * y
+                print(multiply(3, 4)) → 12
+            ➁ 매개변수는 있고 반환값이 없는 함수
+                def greet(name):
+                    print(f"Hello, {name}")
+                greet("Alice")
+            ➂ 매개변수와 반환값이 없는 함수
+                def display_message():
+                    print("This is a simple message")
+                display_message()
+            ➃ 기본값 매개변수
+                def introduce(name, age=20):
+                    print(f"{name}, {age}")
+                introduce("Bob")
+            ➄ 가변 인자
+                def sum_all(*args):
+                    return sum(args)
+                print(sum_all(1, 2, 3, 4))
+    
+    ○ 전역변수: 함수 외부에서 정의된 변수. 프로그램 전역에서 접근 가능
+        •전역변수와 함수의 상호작용
+            ➀ 함수에서 전역변수 읽기
+                x = 10
+                def read_global():
+                    print(x) → 전역변수에 접근
+                read_global() → 10
+            ➁ 함수에서 전역변수 변경
+                x = 10
+                def modify_global():
+                    global x → 전역변수 x를 가져옴
+                    x = 20 → 전역변수 x의 값 변경
+                modify_global()
+                print(x) → 20
+            ➂ 전역변수와 지역변수가 충돌하는 경우: 동일한 이름의 전역변수와 지역변수가 있는 경우, 지역변수가 우선됨
+                x = 10
+                def func():
+                    x = 5 → 지역변수 x
+                    print(x) → 지역변수 x를 출력
+                func() → 5출력
+                print(x) → 10출력
